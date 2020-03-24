@@ -1,0 +1,20 @@
+[
+  {
+    "id":"xd-2018-7",
+    "title":"AdobeXD2018年7月の新機能",
+    "img":"logo.png",
+    "text": "AdobeXD2018年7月の最新機能は「線の強化」「アセット名の設定」「デザインスペックのコメント機能」の3つでした。\n詳しくは[こちら](https://blogs.adobe.com/japan/web-july-2018-release-of-adobe-xd-stroke-enhancements-commenting-on-design-specs-and-more/)",
+    "youtube": "4bedN7TO6iA"
+  },
+  {
+    "id":"learn-nextjs",
+    "title":"Learn Next.js is awesome",
+    "img":"logo.png",
+    "youtube": "z-xKYjsPkVs"
+  },
+  {
+    "id":"deploy-nextjs",
+    "title":"Deploy apps with ZEIT",
+    "img":"logo.png"
+  }
+]
