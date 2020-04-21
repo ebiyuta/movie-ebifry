@@ -1,4 +1,4 @@
-import css from "../assets/css/styles.scss"
+import css from '../assets/css/Footer.module.scss'
 
 const Footer = () => (
   <footer className={css.footer}>

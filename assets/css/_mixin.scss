@@ -1,0 +1,56 @@
+// -------------------------------------------------------------------
+// Mixins
+// -------------------------------------------------------------------
+
+// font-size
+// -------------------------------------------------------------------
+@mixin font-size($size) {
+  font-size: ($size / 16) + rem;
+}
+
+// Sections
+// -------------------------------------------------------------------
+@mixin contentCentering() {
+  max-width: $contWidth;
+  padding-right: $contSpace;
+  padding-left: $contSpace;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include MQ(m) {
+    max-width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+// MediaQuaries
+// -------------------------------------------------------------------
+@mixin MQ($size) {
+  @if not map-has-key($breakpoints, $size){
+    @warn "`#{$size}` is undefined";
+  }
+
+  @each $key, $val in $breakpoints {
+    @if $key == $size {
+      @media screen and (max-width: #{map-get($breakpoints, $key)}px) {
+        @content;
+      }
+    }
+  }
+}
+
+// Interactions
+// -------------------------------------------------------------------
+@mixin FHA() {
+  &:hover,
+  &:active{
+    @content;
+  }
+}
+
+@mixin lastMB0(){
+  > *:last-child {
+    margin-bottom: 0!important;
+  }
+}

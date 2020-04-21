@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import css from "../assets/css/styles.scss"
+import css from '../assets/css/Header.module.scss'
 
 const Header = () => (
   <div className={css.header}>

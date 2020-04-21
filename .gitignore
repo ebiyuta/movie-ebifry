@@ -71,3 +71,4 @@ typings/
 
 # React
 out
+.next

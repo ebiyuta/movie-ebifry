@@ -1,0 +1,68 @@
+@import 'assets';
+
+.pageHeader{
+  background-color: #2A3B48;
+  color: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include MQ(m){
+    padding: 30px 15px;
+  }
+  &_ttl{
+    margin: 0;
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center;
+    @include MQ(m){
+      font-size: 20px;
+    }
+  }
+}
+
+.postDetailWrapper{
+  min-height: calc(100vh - 60px - 100px);
+  background-color: #eee;
+}
+
+.postDetail{
+  padding: 40px 30px 80px;
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  white-space: pre-line;
+  @include MQ(m){
+    padding: 20px 15px 40px;
+  }
+}
+
+.postMovieWrapper{
+  position: relative;
+  padding-top: 45%;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  @include MQ(m){
+    width: 100%;
+    padding-top: 56.25%;
+  }
+}
+
+.postMovie{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.postTweet{
+  > div{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.tweetBtn {
+  margin-bottom: 80px;
+  @include MQ(m){
+    margin-bottom: 40px;
+  }
+}

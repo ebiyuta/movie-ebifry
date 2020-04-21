@@ -1,0 +1,15 @@
+.header{
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  padding-right: 50px;
+  padding-left: 30px;
+  align-items: center;
+  text-align: center;
+  > a{
+    width: 125px;
+    > img{
+      display: block;
+    }
+  }
+}

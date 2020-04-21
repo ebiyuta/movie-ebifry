@@ -1,0 +1,38 @@
+@import 'assets';
+
+.topMv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 240px;
+  text-align: center;
+  background-color: #2A3B48;
+  color: #fff;
+  margin-bottom: 80px;
+  @include MQ(m){
+    height: 200px;
+    margin-bottom: 40px;
+  }
+  > figure {
+    > img {
+      width: 80px;
+      @include MQ(m){
+        width: 60px;
+      }
+    }
+  }
+  > h1{
+    font-size: 16px;
+    font-weight: normal;
+    @include MQ(m){
+      font-size: 14px;
+    }
+    > br{
+      display: none;
+      @include MQ(m){
+        display: block;
+      }
+    }
+  }
+}

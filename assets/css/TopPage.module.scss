@@ -1,0 +1,56 @@
+@import 'assets';
+
+.moviePost{
+  text-decoration: none;
+  &:hover {
+    > img{
+      border: 2px solid #f83;
+    }
+    > h2{
+      text-decoration: underline;
+    }
+  }
+  > img{
+    width: 100%;
+    max-width: 100%;
+    max-height: 200px;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #f83;
+  }
+  > h2{
+    font-weight: normal;
+    color: #000000;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.75;
+  }
+}
+
+.moviePostWrapper{
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.moviePostList{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 60px;
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 30px;
+  @include MQ(m){
+    grid-template-columns: repeat(1,1fr);
+    grid-row-gap: 20px;
+  }
+  >li{
+    list-style: none;
+  }
+}

@@ -1,0 +1,28 @@
+// Generals
+// -------------------------------------------------------------------
+$contSpaceValue: 15;
+$contSpace: $contSpaceValue + px;
+$innerContWidthValue: 1140;
+$contWidth: $innerContWidthValue + $contSpaceValue * 2 + px;
+
+//
+//Media-queries
+//
+$breakpoints: (
+        'm': 767,
+        'l': $innerContWidthValue + $contSpaceValue * 2
+);
+
+// Colors
+// --------------------------
+$baseColor:#2A3B48;
+$baseColor__accent:#555;
+$themeColor:#FF8833;
+$themeColor__accent:#FF4B33;
+$accentColor:#33C2FF;
+
+$fontColor:#333333;
+
+$Glay: #C4C4C4;
+$darkGlay: #1C1C1C;
+$lightGlay: #F9F9F9;
