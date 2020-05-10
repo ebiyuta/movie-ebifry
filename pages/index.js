@@ -31,7 +31,7 @@ const PostLink = ({ post }) => {
   )};
 export default function Blog({resData}) {
   const [posts, setPosts] = useState(resData);
-  const [listIndex, setListIndex] = useState(3);
+  const [listIndex, setListIndex] = useState(0);
 
   const filteredData = (val, index) => {
     setListIndex(index)
