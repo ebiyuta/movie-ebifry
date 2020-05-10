@@ -4,6 +4,8 @@ import TopMv from "../components/TopMv";
 import TheHead from "../components/TheHead";
 import fetch from 'node-fetch'
 import css from '../assets/css/TopPage.module.scss'
+import { useState, useEffect } from "react";
+
 export async function getStaticProps() {
   const response = await fetch('https://movie-ebifry.microcms.io/api/v1/posts?limit=100', {
     headers: {
@@ -28,14 +30,29 @@ const PostLink = ({ post }) => {
     </li>
   )};
 export default function Blog({resData}) {
+  const [posts, setPosts] = useState(resData);
+  const [listIndex, setListIndex] = useState(3);
+
+  const filteredData = (val, index) => {
+    setListIndex(index)
+    if(val === '全て') return setPosts(resData)
+    const filtered = resData.filter(data => data.category.categoryName === val)
+    setPosts(filtered)
+  }
   return (
     <div>
       <TheHead title={"えびの動画まとめ | えびがTwitterなどにアップしている動画のまとめサイト"} url={process.env.siteRoot} ogp={`${process.env.siteRoot}/static/ogp.jpg`} />
       <Layout>
         <TopMv />
+        <ul className={css.buttonList}>
+          <li><button className={listIndex === 0 ? `${css.is_active} ${css.filterButton} ${css.filterButton__all}` : `${css.filterButton} ${css.filterButton__all}`} onClick={() => filteredData("全て", 0)}>全て</button></li>
+          <li><button className={listIndex === 1 ? `${css.is_active} ${css.filterButton} ${css.filterButton__weeklyEbi}` : `${css.filterButton} ${css.filterButton__weeklyEbi}`} onClick={() => filteredData("今週のエビ君", 1)}>今週のエビ君</button></li>
+          <li><button className={listIndex === 2 ? `${css.is_active} ${css.filterButton} ${css.filterButton__saisokuXD}` : `${css.filterButton} ${css.filterButton__saisokuXD}`} onClick={() => filteredData("最速XD", 2)}>最速XD</button></li>
+          <li><button className={listIndex === 3 ? `${css.is_active} ${css.filterButton} ${css.filterButton__other}` : `${css.filterButton} ${css.filterButton__other}`} onClick={() => filteredData("その他", 3)}>その他</button></li>
+        </ul>
         <section className={css.moviePostWrapper}>
           <ul className={css.moviePostList}>
-            {resData.map(post => (
+            {posts.map(post => (
               <PostLink key={post.id} post={post} />
             ))}
           </ul>
